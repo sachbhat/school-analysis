@@ -8,7 +8,7 @@ There are a few files so far:
 
 - [helpers.py](./helpers.py) : As the name describes, a set of python helper functions that I'm using in the notebook.
 
-- [Exploratory Analysis - School Data.ipynb](./Exploratory%20Analysis%20-%20School Data.ipynb): This is a playground to understand underlying datsets
+- [Exploratory Analysis - School Data.ipynb](Exploratory%20Analysis%20-%20School%20Data.ipynb): This is a playground to understand underlying datsets
 
 - [Test Success Rates of 3rd Graders in Washington.ipynb](Test%20Success%20Rates%20of%203rd%20Graders%20in%20Washington.ipynb): This is an attempt at telling a story with the data. It's too early to tell what that story is.
 
