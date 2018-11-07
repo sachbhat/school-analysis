@@ -30,24 +30,19 @@ All of the data sources point at original web files. I have not done any local c
 
 Non-python files:
 
-|----------|-------------|
 | filename | description |
 |----------|-------------|
 | README.md| Text file (markdown format) description of project |
 | data/*.txt | Local cache of files referenced (unused) |
-|----------|-------------|
 
 Python modules:
 
-|----------|-------------|
 | filename | description |
 |----------|-------------|
 | helpers.py | Helper functions to load and transform datasets; this helps provide clarity to notebooks |
-|----------|-------------|
 
 Jupyter notebooks:
 
-|----------|-------------|
 | filename | description |
 |----------|-------------|
 | [Test Success Rates of 3rd Grades in Washington.py](./Test Success Rates of 3rd Grades in Washington.py) | How well do 3rd graders do across different demographics? |
@@ -55,4 +50,3 @@ Jupyter notebooks:
 | Correlations.ipynb | What are the factors that most correlate with test succcess? |
 | YoY Consistency - Higher Performing Test Scores.ipynb | How well do high perorming schools continue this performance? |
 | Scratchpad.ipynb | This is my scratchpad - :-) |
-|----------|-------------|
