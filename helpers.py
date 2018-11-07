@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def load_dataset(year=2018):
+def load_dataset(year=2018, level='school'):
     """
     Load OSPI data set of assemesment performance of Washington state public schools.
 
@@ -14,15 +14,33 @@ def load_dataset(year=2018):
     year : int
         Year
 
+    level : string
+        What level of granularity (school, district, state)
+
+
     Returns
     -------
     pandas.dataframe
         Preloaded dataframe based on CSV downloaded from reportcard.ospi.k12.wa.us
     """
 
-    url_map = {2018: 'http://reportcard.ospi.k12.wa.us/Reports/2018/2_03_AIM-WCAS-SBA%20Assessments%20School%20(with%20suppression%20-%20new%20format).txt',
-        2017: 'http://reportcard.ospi.k12.wa.us/Reports/2017/2_03_AIM-EOC-MSP-SBA%20Assessments%20School%20(with%20suppression%20-%20new%20format).txt',
-        2016: 'http://reportcard.ospi.k12.wa.us/Reports/2016/2_03_AIM-EOC-MSP-SBA%20Assessments%20School%20(with%20suppression%20-%20new%20format).txt'}
+    if level == 'state':
+        url_map = {
+            2018: 'http://reportcard.ospi.k12.wa.us/Reports/2018/2_01_AIM-WCAS-SBA%20Assessments%20State%20(with%20suppression%20-%20new%20format).txt',
+            2017: 'http://reportcard.ospi.k12.wa.us/Reports/2017/2_01_AIM-EOC-MSP-SBA%20Assessments%20State%20(with%20suppression%20-%20new%20format).txt',
+            2016: 'http://reportcard.ospi.k12.wa.us/Reports/2016/2_01_AIM-EOC-MSP-SBA%20Assessments%20State%20(with%20suppression%20-%20new%20format).txt'}
+
+    elif level == 'district':
+        url_map = {
+            2018: 'http://reportcard.ospi.k12.wa.us/Reports/2018/2_02_AIM-WCAS-SBA%20Assessments%20District%20(with%20suppression%20-%20new%20format).txt',
+            2017: 'http://reportcard.ospi.k12.wa.us/Reports/2017/2_02_AIM-EOC-MSP-SBA%20Assessments%20District%20(with%20suppression%20-%20new%20format).txt',
+            2016: 'http://reportcard.ospi.k12.wa.us/Reports/2016/2_02_AIM-EOC-MSP-SBA%20Assessments%20District%20(with%20suppression%20-%20new%20format).txt'}
+
+    else: # school level
+        url_map = {
+            2018: 'http://reportcard.ospi.k12.wa.us/Reports/2018/2_03_AIM-WCAS-SBA%20Assessments%20School%20(with%20suppression%20-%20new%20format).txt',
+            2017: 'http://reportcard.ospi.k12.wa.us/Reports/2017/2_03_AIM-EOC-MSP-SBA%20Assessments%20School%20(with%20suppression%20-%20new%20format).txt',
+            2016: 'http://reportcard.ospi.k12.wa.us/Reports/2016/2_03_AIM-EOC-MSP-SBA%20Assessments%20School%20(with%20suppression%20-%20new%20format).txt'}
 
     if year in url_map:
         return pd.read_csv(url_map[year], sep='\t')
