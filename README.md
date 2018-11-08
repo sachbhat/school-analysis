@@ -45,7 +45,7 @@ Jupyter notebooks:
 
 | filename | description |
 |----------|-------------|
-| Test Success Rates of 3rd Grades in Washington.ipynb | How well do 3rd graders do across different demographics? |
+| Income as Predictor of Test Success Rates in Washington.ipynb | How well do 3rd graders do if they are low income? |
 | Pre-K Prep Stats.ipynb | How well prepared are kids by the time they reach Kindergarten? |
 | Correlations.ipynb | What are the factors that most correlate with test succcess? |
 | YoY Consistency - Higher Performing Test Scores.ipynb | How well do high perorming schools continue this performance? |
